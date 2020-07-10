@@ -1,0 +1,38 @@
+{
+    "name": "winwin/server-hook",
+    "type": "project",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.2",
+        "ext-json": "*",
+        "kuiper/kuiper": "^0.5"
+    },
+    "require-dev": {
+        "wenbinye/tars-gen": "^0.1",
+        "wenbinye/tars": "^0.1",
+        "winwin/composer-phpcs-plugin": "^0.2"
+    },
+    "scripts": {
+        "gen": "./vendor/bin/tars-gen"
+    },
+    "autoload": {
+        "psr-4": {
+            "winwin\\server\\hook\\": "src/"
+        }
+    },
+    "extra": {
+        "kuiper": {
+            "configuration": ["winwin\\server\\hook\\ServerHookConfiguration"]
+        },
+        "tars": {
+            "generator": {
+                "client": {
+                    "servants": {
+                        "EventBus": "WinwinRpc.EventBusServer.EventBusObj"
+                    }
+                }
+            }
+        }
+    }
+}
