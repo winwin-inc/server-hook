@@ -36,7 +36,7 @@ class ServerShutdownListener implements EventListenerInterface
      */
     public function __invoke($event): void
     {
-        $this->eventBusServant->publishNow('Tars', 'ServerShutdown', json_encode([
+        $this->eventBusServant->publishNow(EventName::TOPIC, EventName::SERVER_SHUTDOWN, json_encode([
             'server' => $this->serverProperties->getServer(),
             'ip_address' => $this->serverProperties->getLocalIp(),
         ]));
