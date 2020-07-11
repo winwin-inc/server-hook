@@ -5,3 +5,4 @@ vendor
 composer.lock
 *.gz
 config.conf
+.phpunit.result.cache
