@@ -1,0 +1,16 @@
+{
+    "client": {
+        "tars_path": "tars",
+        "servants": {
+            "EventBus": "winwin.event_bus.EventBusObj"
+        }
+    },
+    "packages": {
+        "winwin/event-bus": {
+            "revision": "master",
+            "files": [
+                "EventBus.tars"
+            ]
+        }
+    }
+}
